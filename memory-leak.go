@@ -1,4 +1,8 @@
-package go_exercises
+package main
+
+import (
+	"fmt"
+)
 
 func findSequence(data []byte) []byte {
 	for j := 0; j < len(data)-1; j++ {

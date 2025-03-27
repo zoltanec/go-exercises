@@ -1,4 +1,9 @@
-package go_exercises
+package main
+
+import (
+	"fmt"
+	"unsafe"
+)
 
 func action() {}
 
@@ -6,21 +11,21 @@ func changeTwoStrings() {
 	var str = "go"
 	newStr := str + "-go"
 
-	strData = unsage.StringData(str)
+	strData = unsafe.StringData(str)
 	newStrData = unsafe.StringData(newStr)
 
-	printLn("action: ", action)
-	printLn("strData: ", strData)
-	printLn("newStr: ", newStrData)
+	fmt.println("action: ", action)
+	fmt.println("strData: ", strData)
+	fmt.println("newStr: ", newStrData)
 
-	slice := usafe.Slice(strData, len(strData))
+	slice := unsafe.Slice(strData, len(strData))
 	newSlice := unsafe.Slice(newStrData, len(newStrData))
 
 	newSlice[0] = 'G'
-	printLn("newstr: ", newStrData)
+	fmt.println("newstr: ", newStrData)
 
 	slice[0] = 'G'
-	printLn("str: ", strData)
+	fmt.println("str: ", strData)
 }
 
 //action:  0x1001596f0
